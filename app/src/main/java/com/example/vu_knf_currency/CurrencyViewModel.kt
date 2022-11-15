@@ -14,15 +14,13 @@ class CurrencyViewModel(private val currencyRepositoryImpl: CurrencyRepositoryIm
     suspend fun getCurrencies() {
         try {
 
-            val response = currencyRepositoryImpl.getCurrencyData()
-
-            val date = response.date
-
             val rates = currencyRepositoryImpl.getCurrencyRates()
 
             val currencyModelList = ArrayList<CurrencyModel>()
 
-            // Select only a few currencies from whole list
+            // Selected only a few currencies from whole list
+            // But can be added any count
+
             // Since API only provides currency rates,
             // codes and names are hard-coded
 

@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             itemAnimator = DefaultItemAnimator()
             adapter = currencyAdapter
         }
+
         currencyViewModel.getLiveData().observe(this) {
             currencyAdapter.setCurrencyList(it)
         }
@@ -37,6 +38,5 @@ class MainActivity : AppCompatActivity() {
         runBlocking {
             currencyViewModel.getCurrencies()
         }
-
     }
 }
