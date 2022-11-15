@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">VU_KNF_Currency</string>
+    <string name="app_name">USD Currency Rates</string>
+    <string name="usd_currency_rates">USD Currency Rates</string>
+    <string name="japanese_yen">Japanese yen</string>
+    <string name="_1_4882">1.4882</string>
+    <string name="jpy">JPY</string>
 </resources>

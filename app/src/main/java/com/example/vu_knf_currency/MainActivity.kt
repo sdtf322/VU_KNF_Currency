@@ -2,7 +2,6 @@ package com.example.vu_knf_currency
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,20 +30,13 @@ class MainActivity : AppCompatActivity() {
             itemAnimator = DefaultItemAnimator()
             adapter = currencyAdapter
         }
-
         currencyViewModel.getLiveData().observe(this) {
             currencyAdapter.setCurrencyList(it)
         }
-
-//        lifecycleScope.launch(Dispatchers.IO) {
-//            currencyViewModel.getCurrencies()
-//        }
 
         runBlocking {
             currencyViewModel.getCurrencies()
         }
 
-
     }
-
 }

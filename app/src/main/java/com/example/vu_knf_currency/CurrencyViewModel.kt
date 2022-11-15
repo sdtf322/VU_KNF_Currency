@@ -14,13 +14,17 @@ class CurrencyViewModel(private val currencyRepositoryImpl: CurrencyRepositoryIm
     suspend fun getCurrencies() {
         try {
 
-            val rates = currencyRepositoryImpl.getCurrencyData().rates
+            val response = currencyRepositoryImpl.getCurrencyData()
+
+            val date = response.date
+
+            val rates = currencyRepositoryImpl.getCurrencyRates()
 
             val currencyModelList = ArrayList<CurrencyModel>()
 
             // Select only a few currencies from whole list
             // Since API only provides currency rates,
-            // codes and names are left hard-coded
+            // codes and names are hard-coded
 
             var currencyModel = CurrencyModel(
                 currencyName = "Euro",
@@ -33,88 +37,63 @@ class CurrencyViewModel(private val currencyRepositoryImpl: CurrencyRepositoryIm
             currencyModel = CurrencyModel(
                 currencyName = "Japanese yen",
                 currencyCode = "JPY",
-                currencyRate = rates.JPY.toString()
-            )
+                currencyRate = rates.JPY.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Sterling",
                 currencyCode = "GBP",
-                currencyRate = rates.GBP.toString()
-            )
-
-            currencyModelList.add(currencyModel)
-
-            currencyModel = CurrencyModel(
-                currencyName = "Sterling",
-                currencyCode = "GBP",
-                currencyRate = rates.GBP.toString()
-            )
+                currencyRate = rates.GBP.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Renminbi",
                 currencyCode = "CNY",
-                currencyRate = rates.CNY.toString()
-            )
+                currencyRate = rates.CNY.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Australian dollar",
                 currencyCode = "AUD",
-                currencyRate = rates.AUD.toString()
-            )
+                currencyRate = rates.AUD.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Canadian dollar",
                 currencyCode = "CAD",
-                currencyRate = rates.CAD.toString()
-            )
+                currencyRate = rates.CAD.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Swiss franc",
                 currencyCode = "CHF",
-                currencyRate = rates.CHF.toString()
-            )
+                currencyRate = rates.CHF.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Singapore dollar",
                 currencyCode = "SGD",
-                currencyRate = rates.SGD.toString()
-            )
+                currencyRate = rates.SGD.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Swedish krona",
                 currencyCode = "SEK",
-                currencyRate = rates.SEK.toString()
-            )
+                currencyRate = rates.SEK.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
                 currencyName = "Polish zloty",
                 currencyCode = "PLN",
-                currencyRate = rates.PLN.toString()
-            )
-
-            currencyModelList.add(currencyModel)
-
-            currencyModel = CurrencyModel(
-                currencyName = "Bitcoin",
-                currencyCode = "BTC",
-                currencyRate = rates.BTC.toString()
-            )
+                currencyRate = rates.PLN.toString())
 
             currencyModelList.add(currencyModel)
 
