@@ -14,10 +14,6 @@ class CurrencyViewModel(private val currencyRepositoryImpl: CurrencyRepositoryIm
     suspend fun getCurrencies() {
         try {
 
-            val response = currencyRepositoryImpl.getCurrencyData()
-
-            val date = response.date
-
             val rates = currencyRepositoryImpl.getCurrencyRates()
 
             val currencyModelList = ArrayList<CurrencyModel>()
