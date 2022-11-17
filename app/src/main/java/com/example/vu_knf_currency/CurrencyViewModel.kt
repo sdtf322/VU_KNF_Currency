@@ -23,72 +23,72 @@ class CurrencyViewModel(private val currencyRepositoryImpl: CurrencyRepositoryIm
             // codes and names are hard-coded
 
             var currencyModel = CurrencyModel(
-                currencyName = "Euro",
-                currencyCode = "EUR",
+                currencyName = EURO,
+                currencyCode = EURO_CODE,
                 currencyRate = rates.EUR.toString()
             )
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Japanese yen",
-                currencyCode = "JPY",
+                currencyName = JAPANESE_YEN,
+                currencyCode = JAPANESE_YEN_CODE,
                 currencyRate = rates.JPY.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Sterling",
-                currencyCode = "GBP",
+                currencyName = STERLING,
+                currencyCode = STERLING_CODE,
                 currencyRate = rates.GBP.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Renminbi",
-                currencyCode = "CNY",
+                currencyName = RENMINBI,
+                currencyCode = RENMINBI_CODE,
                 currencyRate = rates.CNY.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Australian dollar",
-                currencyCode = "AUD",
+                currencyName = AUSTR_DOLLAR,
+                currencyCode = AUSTR_DOLLAR_CODE,
                 currencyRate = rates.AUD.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Canadian dollar",
-                currencyCode = "CAD",
+                currencyName = CANAD_DOLLAR,
+                currencyCode = CANAD_DOLLAR_CODE,
                 currencyRate = rates.CAD.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Swiss franc",
-                currencyCode = "CHF",
+                currencyName = SWISS_FRANC,
+                currencyCode = SWISS_FRANC_CODE,
                 currencyRate = rates.CHF.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Singapore dollar",
-                currencyCode = "SGD",
+                currencyName =  SING_DOLLAR,
+                currencyCode = SING_DOLLAR_CODE,
                 currencyRate = rates.SGD.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Swedish krona",
-                currencyCode = "SEK",
+                currencyName = SWEDISH_KRONA,
+                currencyCode = SWEDISH_KRONA_CODE,
                 currencyRate = rates.SEK.toString())
 
             currencyModelList.add(currencyModel)
 
             currencyModel = CurrencyModel(
-                currencyName = "Polish zloty",
-                currencyCode = "PLN",
+                currencyName = POLISH_ZLOTY,
+                currencyCode = POLISH_ZLOTY_CODE,
                 currencyRate = rates.PLN.toString())
 
             currencyModelList.add(currencyModel)
@@ -104,5 +104,30 @@ class CurrencyViewModel(private val currencyRepositoryImpl: CurrencyRepositoryIm
 
     fun getLiveData() : LiveData<ArrayList<CurrencyModel>> {
         return mutableCurrencyModelList
+    }
+
+    companion object {
+        private const val EURO = "Euro"
+        private const val EURO_CODE = "EUR"
+        private const val JAPANESE_YEN = "Japanese Yen"
+        private const val JAPANESE_YEN_CODE = "JPY"
+        private const val STERLING = "Sterling"
+        private const val STERLING_CODE = "GBP"
+        private const val RENMINBI = "Renminbi"
+        private const val RENMINBI_CODE = "CNY"
+        private const val AUSTR_DOLLAR = "Australian Dollar"
+        private const val AUSTR_DOLLAR_CODE = "AUD"
+        private const val CANAD_DOLLAR = "Canadian Dollar"
+        private const val CANAD_DOLLAR_CODE = "CAD"
+        private const val SWISS_FRANC = "Swiss Franc"
+        private const val SWISS_FRANC_CODE = "CHF"
+        private const val SING_DOLLAR = "Singapore Dollar"
+        private const val SING_DOLLAR_CODE = "SGD"
+        private const val SWEDISH_KRONA = "Swedish Krona"
+        private const val SWEDISH_KRONA_CODE = "SEK"
+        private const val POLISH_ZLOTY = "Polish Zloty"
+        private const val POLISH_ZLOTY_CODE = "PLN"
+
+
     }
 }
