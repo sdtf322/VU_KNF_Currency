@@ -2,6 +2,8 @@ package com.example.vu_knf_currency
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +34,13 @@ class MainActivity : AppCompatActivity() {
         }
         currencyViewModel.getLiveData().observe(this) {
             currencyAdapter.setCurrencyList(it)
+        }
+
+        val refreshButton = findViewById<Button>(R.id.btnRefresh)
+
+        refreshButton.setOnClickListener {
+            Toast.makeText(this, "https://api.exchangerate.host/latest?base=usd",
+            Toast.LENGTH_LONG).show()
         }
 
         runBlocking {
